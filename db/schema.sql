@@ -1,0 +1,116 @@
+DROP DATABASE IF EXISTS golf_handicap_db;
+
+CREATE DATABASE golf_handicap_db;
+
+USE golf_handicap_db;
+
+CREATE TABLE player(
+	id INT	AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    handicap INT,
+    rounds INT,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE tee(
+	id INT AUTO_INCREMENT NOT NULL,
+    color VARCHAR(25) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE golf_course(
+	id INT AUTO_INCREMENT NOT NULL,
+    course_name VARCHAR(255) NOT NULL,
+    city VARCHAR(255),
+    state VARCHAR(2),
+    zip_postal_code INT,
+    slope INT,
+    rating DECIMAL(5, 2),
+    tee INT,
+    hole_1_num INT,
+    hole_1_handicap INT,
+    hole_1_par INT,
+    hole_1_dist INT,
+    hole_2_num INT,
+    hole_2_handicap INT,
+    hole_2_par INT,
+    hole_2_dist INT,
+    hole_3_num INT,
+    hole_3_handicap INT,
+    hole_3_par INT,
+    hole_3_dist INT,
+    hole_4_num INT,
+    hole_4_handicap INT,
+    hole_4_par INT,
+    hole_4_dist INT,
+    hole_5_num INT,
+    hole_5_handicap INT,
+    hole_5_par INT,
+    hole_5_dist INT,
+    hole_6_num INT,
+    hole_6_handicap INT,
+    hole_6_par INT,
+    hole_6_dist INT,
+    hole_7_num INT,
+    hole_7_handicap INT,
+    hole_7_par INT,
+    hole_7_dist INT,
+    hole_8_num INT,
+    hole_8_handicap INT,
+    hole_8_par INT,
+    hole_8_dist INT,
+    hole_9_num INT,
+    hole_9_handicap INT,
+    hole_9_par INT,
+    hole_9_dist INT,
+    hole_10_num INT,
+    hole_10_handicap INT,
+    hole_10_par INT,
+    hole_10_dist INT,
+    hole_11_num INT,
+    hole_11_handicap INT,
+    hole_11_par INT,
+    hole_11_dist INT,
+    hole_12_num INT,
+    hole_12_handicap INT,
+    hole_12_par INT,
+    hole_12_dist INT,
+    hole_13_num INT,
+    hole_13_handicap INT,
+    hole_13_par INT,
+    hole_13_dist INT,
+    hole_14_num INT,
+    hole_14_handicap INT,
+    hole_14_par INT,
+    hole_14_dist INT,
+    hole_15_num INT,
+    hole_15_handicap INT,
+    hole_15_par INT,
+    hole_15_dist INT,
+    hole_16_num INT,
+    hole_16_handicap INT,
+    hole_16_par INT,
+    hole_16_dist INT,
+    hole_17_num INT,
+    hole_17_handicap INT,
+    hole_17_par INT,
+    hole_17_dist INT,
+    hole_18_num INT,
+    hole_18_handicap INT,
+    hole_18_par INT,
+    hole_18_dist INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (tee) REFERENCES tee (id)
+);
+
+CREATE TABLE golf_round(
+	id INT AUTO_INCREMENT NOT NULL,
+    player_id INT NOT NULL,
+    golf_course_id INT NOT NULL,
+    score INT NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (player_id) REFERENCES player (id) ON DELETE CASCADE,
+    FOREIGN KEY (golf_course_id) REFERENCES golf_course (id) ON DELETE CASCADE
+);
+
