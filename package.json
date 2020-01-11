@@ -1,0 +1,23 @@
+{
+  "name": "golf_handicap",
+  "version": "1.0.0",
+  "description": "This applicatoin is to track a golfer's rounds and generate a handicap.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanhalupczynski/golf_handicap.git"
+  },
+  "author": "Sean Halupczynski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seanhalupczynski/golf_handicap/issues"
+  },
+  "homepage": "https://github.com/seanhalupczynski/golf_handicap#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
