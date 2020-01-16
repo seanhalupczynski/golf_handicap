@@ -4,7 +4,7 @@ CREATE DATABASE golf_handicap_db;
 
 USE golf_handicap_db;
 
-CREATE TABLE player(
+CREATE TABLE players(
 	id INT	AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
@@ -13,13 +13,13 @@ CREATE TABLE player(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE tee(
+CREATE TABLE tee_box(
 	id INT AUTO_INCREMENT NOT NULL,
     color VARCHAR(25) NOT NULL,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE golf_course(
+CREATE TABLE golf_courses(
 	id INT AUTO_INCREMENT NOT NULL,
     course_name VARCHAR(255) NOT NULL,
     city VARCHAR(255),
@@ -27,7 +27,7 @@ CREATE TABLE golf_course(
     zip_postal_code INT,
     slope INT,
     rating DECIMAL(5, 2),
-    tee INT,
+    tee_box INT,
     hole_1_num INT,
     hole_1_handicap INT,
     hole_1_par INT,
@@ -101,16 +101,16 @@ CREATE TABLE golf_course(
     hole_18_par INT,
     hole_18_dist INT,
     PRIMARY KEY (id),
-    FOREIGN KEY (tee) REFERENCES tee (id)
+    FOREIGN KEY (tee_box) REFERENCES tee_box (id)
 );
 
-CREATE TABLE golf_round(
+CREATE TABLE golf_rounds(
 	id INT AUTO_INCREMENT NOT NULL,
     player_id INT NOT NULL,
     golf_course_id INT NOT NULL,
     score INT NOT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY (player_id) REFERENCES player (id) ON DELETE CASCADE,
-    FOREIGN KEY (golf_course_id) REFERENCES golf_course (id) ON DELETE CASCADE
+    FOREIGN KEY (player_id) REFERENCES players (id) ON DELETE CASCADE,
+    FOREIGN KEY (golf_course_id) REFERENCES golf_courses (id) ON DELETE CASCADE
 );
 
