@@ -240,9 +240,15 @@ module.exports = function(sequelize, DataTypes){
         }
     });
 
-    GolfCourse.associate = function(models){
-        GolfCourse.hasMany(models.TeeBox);
+    GolfCourse.associate = function(){
+        GolfCourse.hasMany(TeeBox, {
+            
+        });
     };
+
+    GolfCourse.associate = function(){
+        GolfCourse.belongsTo(GolfRound)
+    }
 
   return GolfCourse
 };

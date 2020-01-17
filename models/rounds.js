@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes){
             }
         });
 
-        GolfRounds.belongsTo(models.GolfCourse, {
+        GolfRounds.hasMany(GolfCourse, {
             foreignKey: {
                 allowNull: false
             }

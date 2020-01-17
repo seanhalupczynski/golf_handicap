@@ -1,4 +1,4 @@
-module.export = function(sequelize, DataTypes){
+module.exports = function(sequelize, DataTypes){
     var Player = sequelize.define("players", {
         first_name: {
             type: DataTypes.STRING,

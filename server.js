@@ -7,7 +7,6 @@ var PORT = process.env.PORT || 5000;
 
 // Require models directory for syncing
 var db = require("./models");
-
 // Setting up Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
