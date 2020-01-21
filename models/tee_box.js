@@ -1,12 +1,17 @@
 module.exports = function(sequelize, DataTypes){
-    var TeeBox = sequelize.define("tee_box", {
+    const TeeBox = sequelize.define("tee_box", {
         color: {
             type: DataTypes.STRING
         }
     });
 
-    TeeBox.associate = function(models){
-        TeeBox.belongsTo(models.GolfCourse);
-    };
+    // TeeBox.associate = function(models){
+    //     TeeBox.belongsTo(models.GolfCourse, {
+    //         foreignKey: {
+    //             name: "tee_box_id"
+    //         }
+    //     });
+    // };
+
     return TeeBox
 };

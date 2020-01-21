@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var Player = sequelize.define("players", {
+    const Player = sequelize.define("players", {
         first_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -16,11 +16,15 @@ module.exports = function(sequelize, DataTypes){
         }
     });
 
-    Player.association = function(models){
-        Player.hasMany(models.GolfRounds, {
-            onDelete: "cascade"
-        });
-    }
+    // Player.association = function(models){
+    //     Player.belongsTo(models.GolfRound, {
+    //         foreignKey: {
+    //             name: "player_id",
+    //             allowNull: false
+    //         },
+    //         onDelete: "cascade"
+    //     });
+    // }
 
     return Player;
 };

@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var GolfCourse = sequelize.define("golf_courses", {
+    const GolfCourse = sequelize.define("golf_courses", {
         course_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -19,9 +19,9 @@ module.exports = function(sequelize, DataTypes){
         rating: {
             type: DataTypes.DECIMAL(3, 1)
         },
-        tee_box: {
-            type: DataTypes.INTEGER
-        },
+        // tee_box_id: {
+        //     type: DataTypes.INTEGER
+        // },
         hole_1_num: {
             type: DataTypes.INTEGER
         },
@@ -240,15 +240,23 @@ module.exports = function(sequelize, DataTypes){
         }
     });
 
-    GolfCourse.associate = function(){
-        GolfCourse.hasMany(TeeBox, {
-            
-        });
-    };
+    // GolfCourse.associate = function(models){
+    //     GolfCourse.hasMany(models.TeeBox, {
+    //         foreignKey: {
+    //             name: "tee_box_id",
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
-    GolfCourse.associate = function(){
-        GolfCourse.belongsTo(GolfRound)
-    }
+    // GolfCourse.associate = function(models){
+    //     GolfCourse.belongsTo(models.GolfRound, {
+    //         foreignKey:{
+    //             name: "golf_course_id",
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
-  return GolfCourse
+    return GolfCourse
 };
