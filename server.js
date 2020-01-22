@@ -22,7 +22,7 @@ require("./routes/tee-box-api-routes")(app)
 require("./routes/html-routes")(app);
 
 // Syncing our squelize models and then starting our Express app
-db.sequelize.sync({ force: true }).then(function(){
+db.sequelize.sync().then(function(){
     app.listen(PORT, function(){
         console.log("Application listening on port " + PORT);
     });
