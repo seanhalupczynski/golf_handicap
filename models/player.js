@@ -13,6 +13,14 @@ module.exports = function(sequelize, DataTypes){
         },
         rounds: {
             type: DataTypes.INTEGER
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     });
 

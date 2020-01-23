@@ -2,15 +2,15 @@ var db = require("../models")
 
 module.exports = function(app){
 // ========== GET ROUTES ==========
-    // Get all the golf courses info from GolfCourse table
-    app.get("/api/golf_courses", function(req, res){
+    // Get all golf courses from GolfCourse table
+    app.get("/api/GolfCourses", function(req, res){
         db.GolfCourse.findAll().then(function(golfCourseRes){
             res.json(golfCourseRes);
         });
     });
 
-    // Get individual golf course info from GolfCourse table by id
-    app.get("/api/golf_courses/:id", function(req, res){
+    // Get specific golf course from GolfCourse table by id
+    app.get("/api/GolfCourses/:id", function(req, res){
         db.GolfCourse.findAll({
             where: {
                 id: req.params.id
@@ -19,20 +19,20 @@ module.exports = function(app){
             res.json(golfCourseRes);
         });
     });
-
+    
 // ========== POST ROUTES ==========
-    // Add a new golf course to the GolfCourse table
-    app.post("/api/golf_courses", function(req, res){
+    // Add a golf course to the Golf Course table
+    app.post("/api/GolfCourses", function(req, res){
         db.GolfCourse.create(req.body).then(function(golfCourseRes){
             res.json(golfCourseRes);
         });
     });
-
 // ========== PUT ROUTES ==========
+    // Update a golf course's data on the Golf Course table
 
 // ========== DELETE ROUTES ==========
-    // Delete a golf course from GolfCourse table by id
-    app.delete("/api/golf_courses/:id", function(req, res){
+    // Delete a golf course from the Golf Course table
+    app.delete("api/GolfCourse/:id", function(req, res){
         db.GolfCourse.destroy({
             where: {
                 id: req.params.id
