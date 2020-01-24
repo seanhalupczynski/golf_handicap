@@ -19,9 +19,9 @@ module.exports = function(sequelize, DataTypes){
         rating: {
             type: DataTypes.DECIMAL(3, 1)
         },
-        // tee_box_id: {
-        //     type: DataTypes.INTEGER
-        // },
+        website: {
+            type: DataTypes.STRING
+        },
         hole_1_num: {
             type: DataTypes.INTEGER
         },
