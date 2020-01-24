@@ -1,16 +1,11 @@
 module.exports = function(sequelize, DataTypes){
     var GolfRound = sequelize.define("GolfRound", {
-        // player_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false
-        // },
-        // golf_course_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false
-        // },
         score: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        date_played: {
+            type: DataTypes.DATEONLY
         }
     });
 
